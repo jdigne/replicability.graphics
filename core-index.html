@@ -1,0 +1,254 @@
+
+      <footer>
+	<a href="#project" class="button scrolly">The Project</a>
+	<a href="browse.html#data" class="button">The Data</a>
+        <a href="index.html#team" class="button">The Team</a>
+	<a href="#contribute" class="button scrolly">Contribute</a>
+     </footer>
+    </section>
+    
+    <!-- First -->
+    <section id="project" class="main">
+      <header>
+	<div class="container">
+	  <h2>The Project</h2>
+	  <p style="text-align:left"> Being able to duplicate published research results is an
+        important process of conducting research whether to build upon
+        these findings or to compare with them.  This process is
+        called &ldquo;replicability&rdquo; when using the original authors'
+        artifacts (e.g., code), or &ldquo;reproducibility&rdquo; otherwise
+        (e.g., re-implementing algorithms).  Reproducibility and
+        replicability of research results have gained a lot of
+        interest recently with assessment studies being led in various
+        fields, and they are often seen as a trigger for better result
+        diffusion and transparency.  In this project, we assess
+        replicability in Computer Graphics, by evaluating whether the
+        code is available and whether it works properly.  As a proxy
+        for this field we compiled, ran and analyzed 151 codes out of
+       375 papers from 2014, 2016 and 2018 SIGGRAPH conferences. This
+        analysis shows a clear increase in the number of papers with
+        available and operational research codes with a dependency on
+        the subfields, and indicates a correlation between code
+        replicability and citation count.</p>
+
+      <p style="text-align:left">This website provides an interactive tool to explore our results and evaluation data.
+      It also provides tools to comment on the various codes either as an author or as a user. All materials (data, scripts..) that  have been used to generate these results are available on the  <a
+      href="https://github.com/GraphicsReplicability/replicability.graphics"> <img width="20pt" src="images/github.png"/>&nbsp;replicability.graphics
+      GitHub project</a>.</p>
+
+
+     <p style="text-align:left"> Our project aims at providing the community with tools to improve Computer Graphics research replicability. Sharing this goal is the <a href="http://ReplicabilityStamp.org">Graphics
+     Replicability Stamp Initiative</a> whose objective is to highlight replicable research works in Computer Graphics.</p>
+
+      <p style="text-align:left">You can contribute new code analysis for computer graphics
+      papers. We're looking forward to your <a href="#contribute" class="scrolly">contributions</a>. You can also <a href="#contact" class="scrolly">contact us</a>.</p>
+
+     <h3>Data Digest<h3>
+    <div class="row">
+        <div class="column2 chart-container">
+            <canvas height="150" id="myChartTopics" class="chartjs-render-monitor"></canvas>
+        </div>
+        <div class="column2 chart-container">
+            <canvas height="150" id="myChartPdf" class="chartjs-render-monitor"></canvas>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+    myChartTopics.data.labels =['Most results reproduced',
+             'Some results reproduced',
+             'Could not reproduce using code',
+             'Total (code available)',
+             'Total (code not available)',
+             'Reproducible using pseudo-code',
+             'Cannot not reproduce using pseudo-code',
+             'Total (only pseudo-code)'];
+        myChartTopics.data.datasets.push(myChartGenerateEmpty(0));
+        myChartTopics.data.datasets[0].data = [19, 10, 8, 37, 90, 5, 23, 27] ;
+        myChartTopics.data.datasets[0].label = 2014;
+        
+        myChartTopics.data.datasets.push(myChartGenerateEmpty(1));
+        myChartTopics.data.datasets[1].data = [26, 9, 12, 47, 72, 0, 17, 17] ;
+        myChartTopics.data.datasets[1].label = 2016;
+        
+        myChartTopics.data.datasets.push(myChartGenerateEmpty(2));
+        myChartTopics.data.datasets[2].data = [38, 10, 19, 67, 61, 0, 11, 11] ;
+        myChartTopics.data.datasets[2].label = 2018;
+        
+        myChartTopics.data.datasets.push(myChartGenerateEmpty(3));
+        myChartTopics.data.datasets[3].data = [0, 0, 1, 0, 1, 0, 0, 0] ;
+        myChartTopics.data.datasets[3].label = 2019;
+        
+        myChartPdf.data.datasets.push(myChartPdfGenerateEmpty(0));
+        myChartPdf.data.datasets[0].data = [5, 127, 0] ;
+        myChartPdf.data.datasets[0].label = 2014;
+        
+        myChartPdf.data.datasets.push(myChartPdfGenerateEmpty(1));
+        myChartPdf.data.datasets[1].data = [17, 118, 1] ;
+        myChartPdf.data.datasets[1].label = 2016;
+        
+        myChartPdf.data.datasets.push(myChartPdfGenerateEmpty(2));
+        myChartPdf.data.datasets[2].data = [22, 127, 1] ;
+        myChartPdf.data.datasets[2].label = 2018;
+        
+        myChartPdf.data.datasets.push(myChartPdfGenerateEmpty(3));
+        myChartPdf.data.datasets[3].data = [1, 1, 0] ;
+        myChartPdf.data.datasets[3].label = 2019;
+        
+        myChartTopics.update();
+        myChartPdf.update();
+    });
+    </script>
+
+	</div>
+      </header>
+      <div class="content dark style1 featured">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-4 col-12-narrow">
+	      <section>
+		<span class="feature-icon"><span class="icon
+		solid fa-book-open"></span></span>
+		<header>
+		  <h3><a href="browse.html#data">Explore</a></h3>
+		</header>
+		<p>Explore the data and our replicability scores</p>
+	      </section>
+	    </div>
+	    <div class="col-4 col-12-narrow">
+	      <section>
+		<span class="feature-icon"><span class="icon solid fa-microscope"></span></span>
+		<header>
+		  <h3><a href="#team" class="scrolly">Analyze</a></h3>
+		</header>
+		<p>Read our Siggraph 2020 paper on 374 analyzed Siggraph papers.</p>
+	      </section>
+	    </div>
+	    <div class="col-4 col-12-narrow">
+	      <section>
+		<span class="feature-icon"><span class="icon solid fa-comments"></span></span>
+		<header>
+		  <h3><a href="#contribute" class="scrolly">Contribute</a></h3>
+		</header>
+		<p>Add comments or new analysis for Computer Graphics papers.</p>
+	      </section>
+	    </div>
+	    <div class="col-12">
+	      <footer>
+		<a href="browse.html#data" class="button scrolly">375 reviews so far</a>
+	      </footer>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </section>
+
+
+    <section id="team" class="main">
+        <div class="content dark style2">
+            <div class="container">
+                <div class="col-4 col-12-narrow">
+                <h3>The Team</h3>
+                <ul style="text-align:left">
+                <li> <a href="https://perso.liris.cnrs.fr/nicolas.bonneel/">Nicolas Bonneel</a> (CNRS, LIRIS, Lyon, France)
+                <li> <a href="https://perso.liris.cnrs.fr/david.coeurjolly/">David Coeurjolly</a> (CNRS, LIRIS, Lyon, France)
+                <li> <a href="https://perso.liris.cnrs.fr/julie.digne/">Julie Digne</a> (CNRS, LIRIS, Lyon, France)
+                <li> <a href="https://www.irit.fr/~Nicolas.Mellado/">Nicolas Mellado</a> (CNRS, IRIT, Toulouse, France)
+                </ul>
+
+                        <p>Main reference paper: <a href="">Nicolas Bonneel, David Coeurjolly, Julie Digne, Nicolas Mellado, <i>Code Replicability in Computer Graphics</i>, Siggraph 2020 </a></p>
+
+                <img height="100px" src="images/logo_cnrs.png"/>   &nbsp;&nbsp;&nbsp;  <img height="100px" src="images/logo_liris.png"/> &nbsp;&nbsp;&nbsp; <img height="100px"  src="images/logo_irit.png"/>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+   	<section id="contribute" class="main">
+	  <header>
+	    <div class="container">
+	      <h2>Contribute</h2>
+              <p style="text-align:left">There are several ways in which you can contribute and help us improve Computer Graphics research replicability</p>
+              <ul style="text-align:left">
+              <li> Add a comment (alternative compilation tricks, details on the code...) via the discussion on each paper page.</li>
+              <li> Add a new variant (replicability test), <i>i.e.</i> edit an existing JSON file (see below).
+              <li> Add a new entry to the system (new paper), <i>i.e.</i> submit a new JSON file.
+              </ul>
+
+                <p style="text-align:left">For the last two cases, you
+                can either submit a proper JSON file as a <a
+                href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">pull request</a>
+                to this <a href="https://github.com/GraphicsReplicability/replicability.graphics"><img width="20pt" src="images/github.png"/> project</a>, or send the JSON file to <a href=mailto:GraphicsReplicability@liris.cnrs.fr">GraphicsReplicability@liris.cnrs.fr</a>.</p>
+
+
+
+                <p style="text-align:left">In our system, the website
+                is fully generated from data available on JSON
+                documents. You can browse the database on the <a
+                href="https://github.com/GraphicsReplicability/replicability.graphics/tree/master/data">github
+                project page</a>. Each paper is a single JSON file, named by the paper DOI,
+                with multiple "variant" records. Each variant is a
+                build test on a specific system, environment or
+                reviewer. For example, an article with DOI <b>10.1145/2601097.2601102</b> has a <b>10.1145-2601097.2601102.json</b> file which looks like </p>
+                <pre class="prejson">
+
+                [
+                  {
+                    ....
+                    ... data for variant A ...
+                    ...
+                  },
+                  {
+                    ....
+                    ... data for variant B ...
+                    ...
+                  },
+                  ....
+                ]
+                </pre>
+
+                <p style="text-align:left">We highly recommend having a look to our <a
+                href="https://github.com/GraphicsReplicability/replicability.graphics/blob/master/template.json">template
+                JSON</a> with all the explanations about the fields we
+                are using.</p>
+
+                <p style="text-align:left">If you have any question,
+                feature requests or found any bug, do not hesitate to
+                report an <a
+                href="https://github.com/GraphicsReplicability/replicability.graphics/issues/new/choose">Issue</a>.
+                </p>
+
+                </div>
+           </header>
+        </section>
+
+    <section id="contact" class="main">
+        <div class="content dark style2">
+            <div class="container">
+                <div class="col-4 col-12-narrow">
+	      <h2>Contact us</h2>
+	      <p>Drop us an email for more information or to let us know what you think.</p>
+                </div>
+	  <div class="content style4 featured">
+	    <div class="container medium">
+	      <form method="post" action="mailto:GraphicsReplicability@liris.cnrs.fr">
+		<div class="row gtr-50">
+		  <div class="col-6 col-12-mobile"><input type="text" placeholder="Name" /></div>
+		  <div class="col-6 col-12-mobile"><input type="text" placeholder="Email" /></div>
+		  <div class="col-12"><textarea name="message" placeholder="Message"></textarea></div>
+		  <div class="col-12">
+		    <ul class="actions special">
+		      <li><input type="submit" class="button" value="Send Message" /></li>
+		      <li><input type="reset" class="button alt" value="Clear Form" /></li>
+		    </ul>
+		  </div>
+		</div>
+	      </form>
+	    </div>
+	  </div>
+            </div>
+        </div>
+    </section>
+	  </div>
+    
