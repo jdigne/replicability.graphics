@@ -5,12 +5,12 @@
         "##": "Name of the variant. This can be used to distinguish",
         "##": "between different OS or build environments. Common variant names should be formatted as",
         "##": "Ubuntu xx.xx, Debian xx.xx, Windows xx.xx, MacOS x.",
-        "Variant name": " ",
+        "Variant name": "macOS",
 
         "##": "Reviewer name and email",
         "##": "E.g. 'John Doe <john.doe@world.org>'",
         "##": "Note: we will detect and add a link to your github account if you use the same email address here.",
-        "Reviewer name": " ",
+        "Reviewer name": "David Coeurjolly <david.coeurjolly@liris.cnrs.fr> ",
 
         "##": "For a given paper, there is one specific variant (the master one)",
         "##": "that is displayed on the first pane of the replicability paper web page",
@@ -22,22 +22,19 @@
         "##": "(true/false)",
         "Is variant deprecated (boolean)": false,
 
-        "##": "OS for the test",
-        "Operating system for the test": "",
-        
         "##": "Article title",
-        "Title": " ",
+        "Title": "Parametrization quantization with free boundaries for trimmed quad meshing",
 
         "##": "Article identifiers",
-        "DOI": "xx.yyyy/uuuuuuuuuu.vvvvvvvv",
+        "DOI": "10.1145/3306346.3323019",
 
         "##": "Year of publication (integer)",
-        "Year": 2020,
+        "Year": 2019,
 
         "##": "ACM Keywords of the paper (a list of strings)",
         "ACM Keywords": [
-            " ... ",
-            " ... "
+            "Mesh geometry models",
+            "Mesh models"
         ],
 
         "##": "Paper main topic",
@@ -52,22 +49,19 @@
         "Co-authors from industry (boolean)": false,
 
         "##": "Is the paper available as ACM Open Access? (true/false) ",
-        "ACM Open Access (boolean)": false,
+        "ACM Open Access (boolean)": true,
 
         "##": "PDF accessibility on the author or project or institution web page (true/false)",
-        "PDF on the authors' webpage / institution (boolean)": false,
+        "PDF on the authors' webpage / institution (boolean)": true,
+        "PDF URL": "https://www.graphics.rwth-aachen.de/media/papers/300/LyonCampenBommesKobbelt_Siggraph2019_TrimmedQuadMeshing.pdf",
 
         "##": "Is a paper preprint available on Arxiv or any Open Archive Initiative",
         "##": "platform (true/false) ?",
         "PDF on Arxiv or any openarchive initiatives (boolean)": false,
         "Arxiv/OAI page URL": "",
 
-        "##": "URL for direct download of the PDF paper (eiher author/institution/arxiv website)",
-        "##": "(empty if PDF not available)",
-        "PDF URL": "",
-        
         "##": "Project URL (if any)",
-        "Project URL": "",
+        "Project URL": "https://www.meshing.rwth-aachen.de/publication/03300/",
 
         "##": "Is companion code available ? (true/false)",
         "Code available (boolean)": false,
@@ -137,10 +131,8 @@
         "##": "but some trained models, specific data for instance).",
         "##": "(true/false)",
         "Does the code need data (not examples) (boolean)": false,
-        
         "##": "If it is the case, the nature of the required data",
         "Nature of the data (pretrained model, LUT...)": "",
-
         "##": "Is the required data licensed?",
         "##": "If it is, please specify the license or keep an empty string",
         "License of the data": "",
@@ -195,6 +187,9 @@
         "##": "...",
         "##": "10 = more than 100 min",
         "Time spent for the test (code download to first successful run, [0,10], 10min slots, 100min max)": 0,
+
+        "##": "OS for the test",
+        "Operating system for the test": "",
 
         "##": "Detailed instructions (especially if you had to fix some bugs before being able to run a test)",
         "Build instructions/comments": "",
